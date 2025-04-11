@@ -133,6 +133,11 @@ async def query_gemini(context: str, user_query: str) -> str:
         detail="Failed to generate content after multiple attempts due to quota/resource exhaustion."
     )
 
+@app.get("/ping")
+async def ping():
+    return {"status": "ok"}
+
+
 # ----------------------------
 # /ask endpoint: Combine similarity search and Gemini response generation
 # ----------------------------
